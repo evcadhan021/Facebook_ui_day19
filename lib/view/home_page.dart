@@ -81,36 +81,61 @@ class HomePage extends StatelessWidget {
                           makeStory(
                             storyImage: "assets/pizza.jpg",
                             userImage: "assets/userImage/satu.jpg",
-                            userName: "Badrul sahwi",
+                            userName: "Aisyah Putri",
                           ),
                           makeStory(
                             storyImage: "assets/ayam.jpg",
                             userImage: "assets/userImage/dua.jpg",
-                            userName: "Badrul sahwi",
+                            userName: "Crisia amelia",
                           ),
                           makeStory(
                             storyImage: "assets/daging.jpg",
                             userImage: "assets/userImage/tiga.jpg",
-                            userName: "Badrul sahwi",
+                            userName: "Vita asmina",
                           ),
                           makeStory(
                             storyImage: "assets/spagety.jpg",
                             userImage: "assets/userImage/empat.jpg",
-                            userName: "Badrul sahwi",
+                            userName: "Syarah nurmaisa",
                           ),
                           makeStory(
                             storyImage: "assets/pizza.jpg",
                             userImage: "assets/userImage/lima.jpg",
-                            userName: "Badrul sahwi",
+                            userName: "Navisa jayda",
                           ),
                           makeStory(
                             storyImage: "assets/daging.jpg",
                             userImage: "assets/userImage/enam.jpg",
-                            userName: "Badrul sahwi",
+                            userName: "Jiwon melia",
                           ),
                         ],
                       ),
-                    )
+                    ),
+                    SizedBox(height: 40),
+                    makeFeed(
+                      userName: "Jiwon melia",
+                      userImage: "assets/userImage/enam.jpg",
+                      feedTime: "1 hr ago",
+                      feedText:
+                          "All the Lorem Ipsum generators on the Internet tend to repeat predefined.",
+                      feedImage: "assets/postImage/women.jpg",
+                    ),
+                    makeFeed(
+                      userName: "Aisyah Putri",
+                      userImage: "assets/userImage/satu.jpg",
+                      feedTime: "1 hr ago",
+                      feedText:
+                          "All the Lorem Ipsum generators on the Internet tend to repeat predefined.",
+                      feedImage: "assets/postImage/gojo.jpg",
+                    ),
+                    makeFeed(
+                      userName: "Navisa jayda",
+                      userImage: "assets/userImage/lima.jpg",
+                      feedTime: "1 hr ago",
+                      feedText:
+                          "All the Lorem Ipsum generators on the Internet tend to repeat predefined.",
+                      feedImage: "assets/postImage/spiderman.jpg",
+                    ),
                   ],
                 ),
               ),
@@ -158,6 +183,78 @@ class HomePage extends StatelessWidget {
             )
           ],
         ),
+      ),
+    );
+  }
+
+  Widget makeFeed({userName, userImage, feedTime, feedText, feedImage}) {
+    return Container(
+      margin: EdgeInsets.only(bottom: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                        image: AssetImage(userImage),
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 10),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        userName,
+                        style: TextStyle(
+                          color: Colors.grey[900],
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          // letterSpacing: 1,
+                        ),
+                      ),
+                      Text(
+                        feedTime,
+                        style: TextStyle(color: Colors.grey),
+                      )
+                    ],
+                  )
+                ],
+              ),
+              IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.more_horiz,
+                    size: 30,
+                    color: Colors.grey[600],
+                  ))
+            ],
+          ),
+          SizedBox(height: 20),
+          Text(
+            feedText,
+            style: TextStyle(color: Colors.grey[800], height: 1.5),
+          ),
+          SizedBox(height: 20),
+          Container(
+            height: 300,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                image: DecorationImage(
+                  image: AssetImage(feedImage),
+                  fit: BoxFit.cover,
+                )),
+          )
+        ],
       ),
     );
   }
