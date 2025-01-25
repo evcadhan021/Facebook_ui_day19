@@ -136,6 +136,31 @@ class HomePage extends StatelessWidget {
                           "All the Lorem Ipsum generators on the Internet tend to repeat predefined.",
                       feedImage: "assets/postImage/spiderman.jpg",
                     ),
+                    makeFeed(
+                      userName: "Navisa jayda",
+                      userImage: "assets/userImage/lima.jpg",
+                      feedTime: "1 hr ago",
+                      feedText:
+                          "All the Lorem Ipsum generators on the Internet tend to repeat predefined.",
+                      feedImage: "assets/postImage/mobil.jpg",
+                    ),
+                    makeFeed(
+                      userName: "Navisa jayda",
+                      userImage: "assets/userImage/lima.jpg",
+                      feedTime: "1 hr ago",
+                      feedText:
+                          "All the Lorem Ipsum generators on the Internet tend to repeat predefined.",
+                      feedImage: "assets/postImage/senja.jpg",
+                    ),
+                    makeFeed(
+                      userName: "Navisa jayda",
+                      userImage: "assets/userImage/lima.jpg",
+                      feedTime: "1 hr ago",
+                      feedText:
+                          "All the Lorem Ipsum generators on the Internet tend to repeat predefined.",
+                      feedImage: "assets/postImage/coffee.jpg",
+                    ),
+                    SizedBox(height: 50)
                   ],
                 ),
               ),
