@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
         children: [
           Container(
             height: 120,
+            color: const Color.fromARGB(255, 19, 88, 144),
             padding: const EdgeInsets.only(
               top: 50,
               bottom: 10,
@@ -40,7 +41,7 @@ class HomePage extends StatelessWidget {
                 const SizedBox(width: 15),
                 const Icon(
                   Icons.camera_alt,
-                  color: Colors.black87,
+                  color: Colors.white,
                   size: 28,
                 )
               ],
