@@ -1,3 +1,4 @@
+import 'package:facebook_ui_day19/model/top_button_slide.dart';
 import 'package:flutter/material.dart';
 
 import '../model/story.dart';
@@ -13,42 +14,50 @@ class HomePage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            height: 120,
-            color: const Color.fromARGB(255, 19, 88, 144),
+            height: 100,
+            // color: Colors.red,
             padding: const EdgeInsets.only(
               top: 50,
               bottom: 10,
               left: 20,
               right: 20,
             ),
-            child: Row(
+            child: const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: Colors.grey[200],
-                    ),
-                    child: const TextField(
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: "Search",
-                        hintStyle: TextStyle(color: Colors.grey, fontSize: 18),
-                        prefixIcon: Icon(Icons.search, color: Colors.grey),
-                        contentPadding: EdgeInsets.symmetric(vertical: 10),
-                      ),
-                    ),
+                Text(
+                  "Facebook",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 24, 105, 172),
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(width: 15),
-                const Icon(
-                  Icons.camera_alt,
-                  color: Colors.white,
-                  size: 28,
+                Row(
+                  children: [
+                    Icon(
+                      Icons.add_box,
+                      color: Colors.black,
+                      size: 30,
+                    ),
+                    SizedBox(width: 10),
+                    Icon(
+                      Icons.search,
+                      color: Colors.black,
+                      size: 30,
+                    ),
+                    SizedBox(width: 10),
+                    Icon(
+                      Icons.message,
+                      color: Colors.black,
+                      size: 30,
+                    ),
+                  ],
                 )
               ],
             ),
           ),
+          const TopButtonSlide(),
           Expanded(
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
@@ -277,8 +286,11 @@ class HomePage extends StatelessWidget {
           Row(
             children: [
               makeLikeButton(isActive: true),
+              makeCommentButton(),
+              makeShareButton(),
             ],
-          )
+          ),
+          SizedBox(height: 20),
         ],
       ),
     );
@@ -325,7 +337,11 @@ class HomePage extends StatelessWidget {
             child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.thumb_up, color: isActive ? Colors.blue : Colors.grey),
+            Icon(
+              Icons.thumb_up,
+              color: isActive ? Colors.blue : Colors.grey,
+              size: 18,
+            ),
             SizedBox(width: 5),
             Text(
               "Like",
@@ -346,10 +362,14 @@ class HomePage extends StatelessWidget {
             child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.thumb_up, color: Colors.grey),
+            Icon(
+              Icons.thumb_up,
+              color: Colors.grey,
+              size: 18,
+            ),
             SizedBox(width: 5),
             Text(
-              "Like",
+              "Comment",
               style: TextStyle(color: Colors.grey),
             )
           ],
@@ -357,6 +377,27 @@ class HomePage extends StatelessWidget {
   }
 
   Widget makeShareButton() {
-    return Container();
+    return Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey),
+          borderRadius: BorderRadius.circular(50),
+        ),
+        child: const Center(
+            child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(
+              Icons.share,
+              color: Colors.grey,
+              size: 18,
+            ),
+            SizedBox(width: 5),
+            Text(
+              "Share",
+              style: TextStyle(color: Colors.grey),
+            ),
+          ],
+        )));
   }
 }
